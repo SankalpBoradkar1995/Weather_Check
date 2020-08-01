@@ -62,6 +62,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import API_Function.Weather_Info_API;
 import Weather_check_Base.Base_Class;
 import Weather_check_Elements.City_Details_On_Map;
@@ -188,7 +190,8 @@ public class StartUpCheck extends Base_Class {
 
 	@Test(dependsOnMethods = { "NavigateToWeatherPage", "CityCheck", "CityWeatherCheck", "API_Call" }, priority = 5)
 
-	public void tempCompare() {
+	public void tempCompare() 
+	{
 		// Fetching temperature from UI
 		Float UI_Temperature = Utilities.Temperateure;
 
@@ -197,8 +200,28 @@ public class StartUpCheck extends Base_Class {
 
 		// Comparing two temperature elements
 
-		String result = Utilities.TempCheck(UI_Temperature, API_Temp);
-
-		log.debug(result);
+		Float temperatureDifference = Utilities.TempCheck(UI_Temperature, API_Temp);
+		
+		SoftAssert softAssert = new SoftAssert();
+		
+		if (temperatureDifference >= 0.1F && temperatureDifference < 1.20F) // Checking if temperature difference is within acceptable range
+		{
+			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with API temperature readings");
+		} else 
+		{
+			
+			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "°C");
+		}
+		
+		if (temperatureDifference > 0.01F && temperatureDifference < 1.20F) //// Checking if temperature difference is within acceptable range
+		{
+			log.debug("API Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with UI temperature readings");
+		} 
+		else 
+		{	
+			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "°C");
+		}
+		
+		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+temperatureDifference);
 	}
 }
