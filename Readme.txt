@@ -1,17 +1,20 @@
-Requirements:
-ChromeDriver version 84 or higher.
+Download chromedriver version according to the chrome browser's version before execution to the path:
+C:\Users\Sankalp\Weather_Check\src\test\resources\Weather_check_Drivers
 
-No user inputs are required so after adding appropriate driver and updating maven project follow the execution steps
+Currently using ChromeDriver version 84 within the source folder
 
-1.Select Weather_Check >> Run as >> Maven clean, wait for IDE to complete process
-2.Select Weather_Check >> Run as >> Maven test
+For running maven project follow the given steps
 
+1. Right click on project >> Run As >> Maven clean, wait till system completes the process
+2. Right click on project >> Run As >> Maven test
+
+After execution check the log file at location C:\Users\Sankalp\Weather_Check\src\test\resources\Weather_check_Logs\Application.log, for application logs
+After execution check the log file at location C:\Users\Sankalp\Weather_Check\target\SeleniumLogs.log, for selenium logs 
 
 Note:
 
-Before local execution add chromedriver matching with chrome browser's version.
-Chromedriver path: C:\Users\Weather_Check\src\test\resources\Weather_check_Drivers\\chromedriver.exe
+1. Change the driver path till "C:\Users\Sankalp" as per current directory where project is located on local system
 
-Update the maven project after saving the project on system before execution.
+2. After importing project to IDE, update the maven project and follow the steps mentioned above to execute test
 
-Check if any driver session is active in background in case of any error on "maven - clean" step.
+3. Change the report path till "C:\Users\Sankalp" as per current directory where project is located on local system
