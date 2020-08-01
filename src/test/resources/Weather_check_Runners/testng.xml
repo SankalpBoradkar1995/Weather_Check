@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="Weather_check_Listeners.Test_Status"/>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="Weather_check_Test_Cases.StartUpCheck" />
+			<class name="Rough.rough1" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

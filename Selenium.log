@@ -1,0 +1,50 @@
+2020-08-01 15:17:21,664 DEBUG [main] BasicClientConnectionManager:161 - Get connection for route {}->http://api.openweathermap.org:80
+2020-08-01 15:17:21,776 DEBUG [main] DefaultClientConnectionOperator:177 - Connecting to api.openweathermap.org:80
+2020-08-01 15:17:22,276 DEBUG [main] RequestAddCookies:123 - CookieSpec selected: ignoreCookies
+2020-08-01 15:17:22,279 DEBUG [main] RequestAuthCache:77 - Auth cache not set in the context
+2020-08-01 15:17:22,280 DEBUG [main] RequestTargetAuthentication:80 - Target auth state: UNCHALLENGED
+2020-08-01 15:17:22,282 DEBUG [main] RequestProxyAuthentication:89 - Proxy auth state: UNCHALLENGED
+2020-08-01 15:17:22,283 DEBUG [main] DefaultHttpClient:682 - Attempt 1 to execute request
+2020-08-01 15:17:22,284 DEBUG [main] DefaultClientConnection:274 - Sending request: GET /data/2.5/weather?appid=7fe67bf08c80ded756e598d6f8fedaea&q=Kota&units=metric HTTP/1.1
+2020-08-01 15:17:22,285 DEBUG [main] wire:73 -  >> "GET /data/2.5/weather?appid=7fe67bf08c80ded756e598d6f8fedaea&q=Kota&units=metric HTTP/1.1[\r][\n]"
+2020-08-01 15:17:22,287 DEBUG [main] wire:73 -  >> "Accept: */*[\r][\n]"
+2020-08-01 15:17:22,288 DEBUG [main] wire:73 -  >> "Host: api.openweathermap.org[\r][\n]"
+2020-08-01 15:17:22,289 DEBUG [main] wire:73 -  >> "Connection: Keep-Alive[\r][\n]"
+2020-08-01 15:17:22,289 DEBUG [main] wire:73 -  >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_261)[\r][\n]"
+2020-08-01 15:17:22,290 DEBUG [main] wire:73 -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2020-08-01 15:17:22,291 DEBUG [main] wire:73 -  >> "[\r][\n]"
+2020-08-01 15:17:22,292 DEBUG [main] headers:278 - >> GET /data/2.5/weather?appid=7fe67bf08c80ded756e598d6f8fedaea&q=Kota&units=metric HTTP/1.1
+2020-08-01 15:17:22,294 DEBUG [main] headers:281 - >> Accept: */*
+2020-08-01 15:17:22,295 DEBUG [main] headers:281 - >> Host: api.openweathermap.org
+2020-08-01 15:17:22,295 DEBUG [main] headers:281 - >> Connection: Keep-Alive
+2020-08-01 15:17:22,296 DEBUG [main] headers:281 - >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_261)
+2020-08-01 15:17:22,297 DEBUG [main] headers:281 - >> Accept-Encoding: gzip,deflate
+2020-08-01 15:17:22,493 DEBUG [main] wire:73 -  << "HTTP/1.1 200 OK[\r][\n]"
+2020-08-01 15:17:22,535 DEBUG [main] wire:73 -  << "Server: openresty[\r][\n]"
+2020-08-01 15:17:22,536 DEBUG [main] wire:73 -  << "Date: Sat, 01 Aug 2020 09:47:23 GMT[\r][\n]"
+2020-08-01 15:17:22,536 DEBUG [main] wire:73 -  << "Content-Type: application/json; charset=utf-8[\r][\n]"
+2020-08-01 15:17:22,537 DEBUG [main] wire:73 -  << "Content-Length: 481[\r][\n]"
+2020-08-01 15:17:22,538 DEBUG [main] wire:73 -  << "Connection: keep-alive[\r][\n]"
+2020-08-01 15:17:22,539 DEBUG [main] wire:73 -  << "X-Cache-Key: /data/2.5/weather?q=kota&units=metric[\r][\n]"
+2020-08-01 15:17:22,540 DEBUG [main] wire:73 -  << "Access-Control-Allow-Origin: *[\r][\n]"
+2020-08-01 15:17:22,541 DEBUG [main] wire:73 -  << "Access-Control-Allow-Credentials: true[\r][\n]"
+2020-08-01 15:17:22,541 DEBUG [main] wire:73 -  << "Access-Control-Allow-Methods: GET, POST[\r][\n]"
+2020-08-01 15:17:22,560 DEBUG [main] wire:73 -  << "[\r][\n]"
+2020-08-01 15:17:22,562 DEBUG [main] DefaultClientConnection:259 - Receiving response: HTTP/1.1 200 OK
+2020-08-01 15:17:22,564 DEBUG [main] headers:262 - << HTTP/1.1 200 OK
+2020-08-01 15:17:22,566 DEBUG [main] headers:265 - << Server: openresty
+2020-08-01 15:17:22,571 DEBUG [main] headers:265 - << Date: Sat, 01 Aug 2020 09:47:23 GMT
+2020-08-01 15:17:22,572 DEBUG [main] headers:265 - << Content-Type: application/json; charset=utf-8
+2020-08-01 15:17:22,573 DEBUG [main] headers:265 - << Content-Length: 481
+2020-08-01 15:17:22,574 DEBUG [main] headers:265 - << Connection: keep-alive
+2020-08-01 15:17:22,575 DEBUG [main] headers:265 - << X-Cache-Key: /data/2.5/weather?q=kota&units=metric
+2020-08-01 15:17:22,577 DEBUG [main] headers:265 - << Access-Control-Allow-Origin: *
+2020-08-01 15:17:22,578 DEBUG [main] headers:265 - << Access-Control-Allow-Credentials: true
+2020-08-01 15:17:22,580 DEBUG [main] headers:265 - << Access-Control-Allow-Methods: GET, POST
+2020-08-01 15:17:22,633 DEBUG [main] DefaultHttpClient:509 - Connection can be kept alive indefinitely
+2020-08-01 15:17:22,718 DEBUG [main] RequestSpecificationImpl$RestAssuredHttpBuilder:545 - Parsing response as: application/json; charset=utf-8
+2020-08-01 15:17:22,720 DEBUG [main] RequestSpecificationImpl$RestAssuredHttpBuilder:548 - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2020-08-01 15:17:22,883 DEBUG [main] wire:87 -  << "{"coord":{"lon":75.83,"lat":25.18},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":36.22,"feels_like":39.29,"temp_min":36.22,"temp_max":36.22,"pressure":1000,"humidity":44,"sea_level":1000,"grnd_level":974},"visibility":10000,"wind":{"speed":2.32,"deg":238},"clouds":{"all":99},"dt":1596274996,"sys":{"country":"IN","sunrise":1596241439,"sunset":1596289313},"timezone":19800,"id":1266049,"name":"Kota","cod":200}"
+2020-08-01 15:17:22,888 DEBUG [main] BasicClientConnectionManager:200 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@3fb9a67f
+2020-08-01 15:17:22,890 DEBUG [main] BasicClientConnectionManager:225 - Connection can be kept alive indefinitely
+2020-08-01 15:17:26,578 DEBUG [Finalizer] DefaultClientConnection:180 - Connection 0.0.0.0:62150<->37.139.20.5:80 closed
