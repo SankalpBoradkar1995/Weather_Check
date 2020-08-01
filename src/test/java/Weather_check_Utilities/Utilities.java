@@ -23,13 +23,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
 import Weather_check_Base.Base_Class;
 import Weather_check_Elements.City_Details_On_Map;
 import io.restassured.path.json.JsonPath;
 
 public class Utilities extends Base_Class {
 
-	public static String imgPath;;
+	public static String imgPath;
+	
+	public static Float diff;
 
 	static String elements;
 
@@ -354,36 +358,26 @@ public class Utilities extends Base_Class {
 	 * @TempCheck() accepts temperature(float) from UI & API
 	 */
 	
-	public static String TempCheck(Float UI_Temp, Float API_Temp) 
-	{
-		Float diff;
-
+	public static Float TempCheck(Float UI_Temp, Float API_Temp) 
+	{	
+		
 		if (Float.compare(UI_Temp, API_Temp) == 0) // if both temperatures are equal
 		{
-
-			log.debug(" API & UI Temperatures are same");
+			log.debug(" API & UI Temperatures are same"+" "+"UI Temp="+UI_Temp+" "+"API Temp="+API_Temp);
 		} 
 		else if (Float.compare(UI_Temp, API_Temp) < 0) // if API temperature is > than UI temperature, logging the difference 
 		{
 			diff = API_Temp - UI_Temp;
-
-			if (diff >= 0.1F && diff < 1.20F) // Checking if temperature difference is within acceptable range
-			{
-				Result = "UI's Temperature varies by" + " " + diff + "°C" + " " + "with API temperature readings";
-			} else {
-				Result = "API & UI's  temperature reading mis matches by" + " " + diff + "°C";
-			}
+			
+			//log.debug(diff);
+			
 		} else // if UI temperature is > than API temperature, logging the difference
 		{
 			diff = UI_Temp - API_Temp;
+			
+			//log.debug(diff);
 
-			if (diff > 0.01F && diff < 1.20F) //// Checking if temperature difference is within acceptable range
-			{
-				Result = "API's Temperature varies by" + " " + diff + "°C" + " " + "with US's temperature readings";
-			} else {
-				Result = "API& UI's temperature reading mis matches by:" + " " + diff + "°C";
-			}
 		}
-		return Result;
+		return  diff;
 	}
 }
