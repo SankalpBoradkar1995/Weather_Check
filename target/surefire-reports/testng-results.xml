@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="39291" started-at="2020-08-01T16:06:32 IST" finished-at="2020-08-01T16:07:12 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="39291" started-at="2020-08-01T16:06:32 IST" finished-at="2020-08-01T16:07:12 IST">
+      <class name="Weather_check_Test_Cases.StartUpCheck">
+        <test-method status="PASS" signature="startUp()[pri:0, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="startUp" is-config="true" duration-ms="33517" started-at="2020-08-01T16:05:59 IST" finished-at="2020-08-01T16:06:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startUp -->
+        <test-method status="PASS" signature="NavigateToWeatherPage()[pri:1, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="NavigateToWeatherPage" duration-ms="10280" started-at="2020-08-01T16:06:33 IST" finished-at="2020-08-01T16:06:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToWeatherPage -->
+        <test-method status="PASS" signature="CityCheck()[pri:2, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="CityCheck" duration-ms="11288" started-at="2020-08-01T16:06:43 IST" depends-on-methods="Weather_check_Test_Cases.StartUpCheck.NavigateToWeatherPage" finished-at="2020-08-01T16:06:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CityCheck -->
+        <test-method status="PASS" signature="CityWeatherCheck()[pri:3, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="CityWeatherCheck" duration-ms="640" started-at="2020-08-01T16:06:54 IST" depends-on-methods="Weather_check_Test_Cases.StartUpCheck.NavigateToWeatherPage, Weather_check_Test_Cases.StartUpCheck.CityCheck" finished-at="2020-08-01T16:06:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CityWeatherCheck -->
+        <test-method status="PASS" signature="API_Call()[pri:4, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="API_Call" duration-ms="16695" started-at="2020-08-01T16:06:55 IST" depends-on-methods="Weather_check_Test_Cases.StartUpCheck.NavigateToWeatherPage, Weather_check_Test_Cases.StartUpCheck.CityWeatherCheck, Weather_check_Test_Cases.StartUpCheck.CityCheck" finished-at="2020-08-01T16:07:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- API_Call -->
+        <test-method status="PASS" signature="tempCompare()[pri:5, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="tempCompare" duration-ms="3" started-at="2020-08-01T16:07:12 IST" depends-on-methods="Weather_check_Test_Cases.StartUpCheck.NavigateToWeatherPage, Weather_check_Test_Cases.StartUpCheck.API_Call, Weather_check_Test_Cases.StartUpCheck.CityWeatherCheck, Weather_check_Test_Cases.StartUpCheck.CityCheck" finished-at="2020-08-01T16:07:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tempCompare -->
+        <test-method status="PASS" signature="clouser()[pri:0, instance:Weather_check_Test_Cases.StartUpCheck@10bbd20a]" name="clouser" is-config="true" duration-ms="831" started-at="2020-08-01T16:07:12 IST" finished-at="2020-08-01T16:07:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clouser -->
+      </class> <!-- Weather_check_Test_Cases.StartUpCheck -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
