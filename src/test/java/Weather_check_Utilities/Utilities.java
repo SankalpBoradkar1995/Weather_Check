@@ -360,8 +360,7 @@ public class Utilities extends Base_Class {
 	
 	public static Float TempCheck(Float UI_Temp, Float API_Temp) 
 	{	
-		
-		SoftAssert softAssert = new SoftAssert();
+		  SoftAssert softAssert = new SoftAssert();
 		
 		if (Float.compare(UI_Temp, API_Temp) == 0) // if both temperatures are equal
 		{
@@ -397,7 +396,7 @@ public class Utilities extends Base_Class {
 		}
 		
 		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+diff);
-
-		return  diff;
+    
+				return  diff;
 	}
 }
