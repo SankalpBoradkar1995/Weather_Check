@@ -101,7 +101,7 @@ public class Weather_Check extends Base_Class {
 		}
 		else
 		{
-			Assert.assertTrue(true, "Incorrect page landing"); //--------------------------------------> Assert = true if incorrect page landing
+			Assert.assertTrue(false, "Incorrect page landing"); //--------------------------------------> Assert = true if incorrect page landing
 		}
 	}
 
@@ -206,20 +206,20 @@ public class Weather_Check extends Base_Class {
 		
 		if (temperatureDifference >= 0.1F && temperatureDifference < 1.20F) // Checking if temperature difference is within acceptable range
 		{
-			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "캜" + " " + "with API temperature readings");
+			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "째C" + " " + "with API temperature readings");
 		} else 
 		{
 			
-			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "캜");
+			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "째C");
 		}
 		
 		if (temperatureDifference > 0.01F && temperatureDifference < 1.20F) //// Checking if temperature difference is within acceptable range
 		{
-			log.debug("API Temperature varies by" + " " + temperatureDifference + "캜" + " " + "with UI temperature readings");
+			log.debug("API Temperature varies by" + " " + temperatureDifference + "째C" + " " + "with UI temperature readings");
 		} 
 		else 
 		{	
-			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "캜");
+			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "째C");
 		}
 		
 		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+temperatureDifference);
