@@ -368,6 +368,15 @@ public class Utilities extends Base_Class {
 		else if (Float.compare(UI_Temp, API_Temp) < 0) // if API temperature is > than UI temperature, logging the difference 
 		{
 			diff = API_Temp - UI_Temp;
+
+                        if (temperatureDifference >= 0.1F && temperatureDifference < 1.20F) // Checking if temperature difference is within acceptable range
+		{
+			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with API temperature readings");
+		} else 
+		{
+			
+			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "°C");
+		}
 			
 			//log.debug(diff);
 			
@@ -377,7 +386,21 @@ public class Utilities extends Base_Class {
 			
 			//log.debug(diff);
 
+                        if (temperatureDifference > 0.01F && temperatureDifference < 1.20F) //// Checking if temperature difference is within acceptable range
+		{
+			log.debug("API Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with UI temperature readings");
+		} 
+		else 
+		{	
+			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "°C");
 		}
+
+		}
+                
+                SoftAssert softAssert = new SoftAssert();
+		
+		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+temperatureDifference);
+	}
 		return  diff;
 	}
 }
