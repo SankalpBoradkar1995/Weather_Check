@@ -202,26 +202,5 @@ public class Weather_Check extends Base_Class {
 
 		Float temperatureDifference = Utilities.TempCheck(UI_Temperature, API_Temp);
 		
-		SoftAssert softAssert = new SoftAssert();
-		
-		if (temperatureDifference >= 0.1F && temperatureDifference < 1.20F) // Checking if temperature difference is within acceptable range
-		{
-			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with API temperature readings");
-		} else 
-		{
-			
-			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "°C");
-		}
-		
-		if (temperatureDifference > 0.01F && temperatureDifference < 1.20F) //// Checking if temperature difference is within acceptable range
-		{
-			log.debug("API Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with UI temperature readings");
-		} 
-		else 
-		{	
-			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "°C");
-		}
-		
-		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+temperatureDifference);
 	}
 }
