@@ -360,47 +360,43 @@ public class Utilities extends Base_Class {
 	
 	public static Float TempCheck(Float UI_Temp, Float API_Temp) 
 	{	
+		  SoftAssert softAssert = new SoftAssert();
 		
 		if (Float.compare(UI_Temp, API_Temp) == 0) // if both temperatures are equal
 		{
 			log.debug(" API & UI Temperatures are same"+" "+"UI Temp="+UI_Temp+" "+"API Temp="+API_Temp);
+			
 		} 
 		else if (Float.compare(UI_Temp, API_Temp) < 0) // if API temperature is > than UI temperature, logging the difference 
 		{
 			diff = API_Temp - UI_Temp;
-
-                        if (temperatureDifference >= 0.1F && temperatureDifference < 1.20F) // Checking if temperature difference is within acceptable range
-		{
-			log.debug("UI's Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with API temperature readings");
-		} else 
-		{
 			
-			softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + temperatureDifference + "°C");
-		}
-			
-			//log.debug(diff);
+			if (diff >= 0.1F && diff < 1.20F) // Checking if temperature difference is within acceptable range
+			{
+				log.debug("UI's Temperature varies by" + " " + diff + "°C" + " " + "with API temperature readings");
+			} 
+			else 
+			{
+				
+				softAssert.assertTrue(false, "API & UI's  temperature reading mis matches by" + " " + diff + "°C");
+			}
 			
 		} else // if UI temperature is > than API temperature, logging the difference
 		{
 			diff = UI_Temp - API_Temp;
 			
-			//log.debug(diff);
-
-                        if (temperatureDifference > 0.01F && temperatureDifference < 1.20F) //// Checking if temperature difference is within acceptable range
-		{
-			log.debug("API Temperature varies by" + " " + temperatureDifference + "°C" + " " + "with UI temperature readings");
-		} 
-		else 
-		{	
-			softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + temperatureDifference + "°C");
+			if (diff > 0.01F && diff < 1.20F) //// Checking if temperature difference is within acceptable range
+			{
+				log.debug("API Temperature varies by" + " " + diff + "°C" + " " + "with UI temperature readings");
+			} 
+			else 
+			{	
+				softAssert.assertTrue(false, "API& UI's temperature reading mis matches by:" + " " + diff + "°C");
+			}
 		}
-
-		}
-                
-                SoftAssert softAssert = new SoftAssert();
 		
-		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+temperatureDifference);
-	}
-		return  diff;
+		softAssert.assertAll("API & UI temperature value for selected city differes by:"+" "+diff);
+    
+				return  diff;
 	}
 }

@@ -7,8 +7,7 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="Weather_check_Test_Cases.StartUpCheck" />
-			<class name="Rough.rough1" />
+			<class name="Weather_check_Test_Cases.Weather_Check" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
