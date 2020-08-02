@@ -71,7 +71,7 @@ import Weather_check_Elements.HomePage_Elements;
 import Weather_check_Elements.Pin_Your_City_Menu;
 import Weather_check_Utilities.Utilities;
 
-public class StartUpCheck extends Base_Class {
+public class Weather_Check extends Base_Class {
 	@Test(priority = 1)
 	public void NavigateToWeatherPage() throws Exception {
 		log.debug("Browser initilized");
