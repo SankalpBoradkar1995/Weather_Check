@@ -101,7 +101,7 @@ public class Weather_Check extends Base_Class {
 		}
 		else
 		{
-			Assert.assertTrue(false, "Incorrect page landing"); //--------------------------------------> Assert = true if incorrect page landing
+			Assert.assertTrue(false, "Incorrect page landing"+" "+title); //--------------------------------------> Assert = true if incorrect page landing
 		}
 	}
 
