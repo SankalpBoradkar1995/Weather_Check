@@ -18,3 +18,5 @@ Note:
 2. After importing project to IDE, update the maven project and follow the steps mentioned above to execute test
 
 3. Change the report path till "C:\Users\Sankalp" as per current directory where project is located on local system
+
+4. Refresh project once after execution to get updated logs and error screen shots if any.
